@@ -1,6 +1,6 @@
 name = "ValkyrieRobot"
 uuid = "c74b26e8-f247-5d24-b013-c11a2bbd97c6"
-version = "0.2.1"
+version = "0.2.2"
 
 [deps]
 Downloads = "f43a241f-c20a-4ad4-852c-f6b1247861c6"
