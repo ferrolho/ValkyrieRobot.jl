@@ -1,3 +1,4 @@
+import Downloads
 datadir = "valkyrie"
 valkyrie_examples_url = "https://raw.githubusercontent.com/rdeits/drake/eb1dc0ff1b263772e26e177566479c9d17571e7d/examples/valkyrie/"
 urdfpath = "urdf/urdf/valkyrie_A_sim_drake_one_neck_dof_wide_ankle_rom.urdf"
@@ -63,11 +64,11 @@ meshpaths = ["urdf/model/meshes/arms/aj1_left.obj";
     "urdf/model/meshes/torso/torsoyaw.obj"]
 
 ispath(datadir) || mkpath(datadir)
-download(valkyrie_examples_url * urdfpath, joinpath(datadir, "valkyrie.urdf"))
+Downloads.download(valkyrie_examples_url * urdfpath, joinpath(datadir, "valkyrie.urdf"))
 
 for meshpath in meshpaths
     meshdir, meshfilename = splitdir(meshpath)
     meshdir = joinpath(datadir, meshdir)
     ispath(meshdir) || mkpath(meshdir)
-    download(valkyrie_examples_url * meshpath, joinpath(datadir, meshpath))
+    Downloads.download(valkyrie_examples_url * meshpath, joinpath(datadir, meshpath))
 end
